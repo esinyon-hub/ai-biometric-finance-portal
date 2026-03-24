@@ -1,3 +1,4 @@
 Django
 opencv-python
 gunicorn
+whitenoise
