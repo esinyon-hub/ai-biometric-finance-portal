@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-_48n()g@(2kopde3$i!p9)e0*tt0&^zttbfeybxeqw6!46^2z=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ai-biometric-finance-portal.onrender.com"]
+
+
 
 
 # Application definition
