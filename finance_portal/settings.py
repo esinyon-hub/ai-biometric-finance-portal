@@ -14,7 +14,6 @@ SECRET_KEY = 'django-insecure-_48n()g@(2kopde3$i!p9)e0*tt0&^zttbfeybxeqw6!46^2z=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# Add your Render URL here
 ALLOWED_HOSTS = ["ai-biometric-finance-portal.onrender.com"]
 
 # Application definition
@@ -30,6 +29,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ✅ added
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -43,7 +43,7 @@ ROOT_URLCONF = 'finance_portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # ✅ added (important)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -58,7 +58,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'finance_portal.wsgi.application'
 
 # Database
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -80,11 +79,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
+# Static files (VERY IMPORTANT)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Media files (uploads like face images)
+# ✅ WhiteNoise storage (this fixes CSS issue)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
