@@ -1,0 +1,247 @@
+/* ============================
+   General Reset & Fonts
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background-color: #0d1b2a; /* dark blue main background */
+    color: #e0e0e0;
+}
+
+/* ============================
+   SIDEBAR
+============================ */
+.sidebar {
+    width: 220px;
+    background-color: #1b2a47; /* darker sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #00b4d8;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #003566;
+    color: #fff;
+}
+
+/* ============================
+   MAIN CONTENT
+============================ */
+.main {
+    flex: 1;
+    padding: 2rem;
+}
+
+/* Header */
+.header h1 {
+    color: #00b4d8;
+    font-size: 2rem;
+}
+
+.header p {
+    color: #a0c4ff;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================
+   CARDS
+============================ */
+.cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.card {
+    flex: 1;
+    background-color: #1b2a47;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.card h3 {
+    color: #00b4d8;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ============================
+   FORMS
+============================ */
+.form-card {
+    background-color: #1b2a47;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.form-card h2 {
+    color: #00b4d8;
+    margin-bottom: 1rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    border: 1px solid #00b4d8;
+    background-color: #0d1b2a;
+    color: #e0e0e0;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 5px #00b4d8;
+}
+
+button {
+    background-color: #00b4d8;
+    color: #0d1b2a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0077a3;
+    color: #fff;
+}
+
+/* ============================
+   TABLES
+============================ */
+.table-card {
+    background-color: #1b2a47;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #0d1b2a;
+}
+
+th {
+    background-color: #0d1b2a;
+    color: #00b4d8;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #162a4d;
+}
+
+tr:hover {
+    background-color: #003566;
+}
+
+/* Status colors */
+.Pending {
+    color: #ffdd57;
+    font-weight: bold;
+}
+
+.Approved {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.Rejected {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Approve/Reject buttons */
+.approve {
+    background-color: #2ecc71;
+    color: #0d1b2a;
+    margin-right: 5px;
+}
+
+.reject {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* ============================
+   LISTS
+============================ */
+.table-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.table-card ul li {
+    padding: 8px;
+    border-bottom: 1px solid #0d1b2a;
+}
+
+/* ============================
+   Responsive
+============================ */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .sidebar ul {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .main {
+        padding: 1rem;
+    }
+}

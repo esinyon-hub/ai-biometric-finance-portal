@@ -1,0 +1,173 @@
+/* ============================
+   General Reset & Fonts
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d1b2a; /* dark blue background */
+    color: #e0e0e0;
+}
+
+/* ============================
+   LOGIN CONTAINER
+============================ */
+.login-container {
+    width: 380px;
+    background-color: #1b2a47; /* dark card */
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* ============================
+   Tabs
+============================ */
+.tabs {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #00b4d8;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    border-bottom: 4px solid #00b4d8;
+    color: #00b4d8;
+}
+
+/* ============================
+   Forms
+============================ */
+.login-form h2 {
+    color: #00b4d8;
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #a0c4ff;
+    margin-bottom: 1rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    background: #0d1b2a;
+    border: 1px solid #00b4d8;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.input-group label {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    background-color: #1b2a47;
+    padding: 0 4px;
+    font-size: 0.85rem;
+    color: #00b4d8;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 5px #00b4d8;
+}
+
+/* ============================
+   Buttons
+============================ */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #00b4d8;
+    border: none;
+    border-radius: 6px;
+    color: #0d1b2a;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0077a3;
+    color: #fff;
+}
+
+/* ============================
+   Info & Error Messages
+============================ */
+.info-text {
+    font-size: 0.8rem;
+    text-align: center;
+    color: #a0c4ff;
+    margin-top: 0.5rem;
+}
+
+.error-msg {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   Responsive
+============================ */
+@media (max-width: 420px) {
+    .login-container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+}
+
+/* LOGIN WITHOUT VERIFY BUTTON */
+.login-btn.bypass {
+    background-color: #888;       /* gray background */
+    color: white;                 /* white text */
+    border: none;
+    padding: 12px 20px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;        /* remove underline for <a> */
+    transition: background 0.3s;
+}
+
+.login-btn.bypass:hover {
+    background-color: #555;       /* darker gray on hover */
+}

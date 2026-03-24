@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Failed</title>
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="fail">Login Failed</h1>
+        <p class="message">Face not recognized. Try again.</p>
+        <a href="{% url 'biometric_login' %}">Back to Login</a>
+    </div>
+</body>
+</html>

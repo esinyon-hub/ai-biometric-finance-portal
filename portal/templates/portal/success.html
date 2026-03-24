@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="success">Registration Successful!</h1>
+        <p class="message">Your face has been captured successfully.</p>
+        <a href="{% url 'biometric_login' %}">Go to Login</a>
+    </div>
+</body>
+</html>

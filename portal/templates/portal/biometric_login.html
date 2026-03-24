@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Login</title>
+    <link rel="stylesheet" href="{% static 'portal/login.css' %}">
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('login')">Login</button>
+        <button class="tab-btn" onclick="showTab('register')">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form method="POST" class="login-form" id="login-form" style="display: block;">
+        {% csrf_token %}
+        <h2>Secure Login</h2>
+        <p class="subtitle">Password + Face Verification Required</p>
+
+        {% if login_error %}
+            <p class="error-msg">{{ login_error }}</p>
+        {% endif %}
+
+        <div class="input-group">
+            <input type="text" name="username" required>
+            <label>Username</label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+
+        <!-- Normal Login -->
+        <button type="submit" name="login" class="login-btn">Login & Scan Face 👁️</button>
+
+        <!-- Login Without Verify -->
+        <a href="{% url 'bypass_login' %}" class="login-btn bypass">Login Without Verify 🚀</a>
+
+        <p class="info-text">After login, your face will be verified using AI.</p>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form method="POST" class="login-form" id="register-form" style="display: none;">
+        {% csrf_token %}
+        <h2>Create Account</h2>
+        <p class="subtitle">Password + Face Capture Required</p>
+
+        {% if register_error %}
+            <p class="error-msg">{{ register_error }}</p>
+        {% endif %}
+
+        <div class="input-group">
+            <input type="text" name="username" required>
+            <label>Username</label>
+        </div>
+
+        <div class="input-group">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+
+        <div class="input-group">
+            <select name="role" required>
+                <option value="" disabled selected>Select Role</option>
+                <option value="accounts_officer">Accounts Officer</option>
+                <option value="supervisor">Supervisor</option>
+            </select>
+            <label>Role</label>
+        </div>
+
+        <button type="submit" name="register" class="login-btn">Register & Capture Face 👁️</button>
+        <p class="info-text">Your face will be captured during registration.</p>
+    </form>
+
+</div>
+
+<script>
+function showTab(tab) {
+    const loginForm = document.getElementById('login-form');
+    const registerForm = document.getElementById('register-form');
+    const tabs = document.querySelectorAll('.tab-btn');
+
+    if(tab === 'login') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+        tabs[0].classList.add('active');
+        tabs[1].classList.remove('active');
+    } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+        tabs[0].classList.remove('active');
+        tabs[1].classList.add('active');
+    }
+}
+</script>
+
+</body>
+</html>

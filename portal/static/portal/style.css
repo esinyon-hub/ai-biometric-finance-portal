@@ -1,0 +1,135 @@
+/* Reset & Basic */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 500px;
+    margin: 80px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    width: 50px;
+    height: 3px;
+    background: #4caf50;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    transform: scaleX(0);
+    animation: underlineGrow 0.8s ease forwards;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type="text"], input[type="submit"] {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    outline: none;
+}
+
+input[type="submit"] {
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+input[type="submit"]:hover {
+    background: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* Messages */
+.message {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    animation: fadeIn 1s ease forwards;
+}
+
+.success { color: #28a745; font-weight: bold; }
+.fail { color: #dc3545; font-weight: bold; }
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #4caf50;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #2e7d32;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes underlineGrow {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+/* Dashboard Special */
+.container.dashboard {
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    text-align: center;
+}
+
+.container.dashboard h1 {
+    font-size: 2.5rem;
+}
+
+.container.dashboard a {
+    color: #d81b60;
+}
+
+.container.dashboard a:hover {
+    color: #ad1457;
+    transform: scale(1.1);
+}

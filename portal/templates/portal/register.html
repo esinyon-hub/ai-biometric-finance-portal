@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Face</title>
+    <link rel="stylesheet" href="{% static 'portal/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Register Your Face</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="submit" value="Capture Face">
+        </form>
+        <a href="{% url 'biometric_login' %}">Already registered? Login here</a>
+    </div>
+</body>
+</html>
